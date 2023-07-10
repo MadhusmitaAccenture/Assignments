@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "4efe4bd1-1b8a-48e4-b2fd-59b944ed802e",
+		"name": "Assignment-API-TEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AddPizza",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pizzaName\":\"Test-1\",\r\n    \"bill\" :11.2,\r\n    \"quantity\": 1,\r\n    \"customerContactNumber\":\"111-222-333\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:7094/pizzaorder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7094",
+					"path": [
+						"pizzaorder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PizzaList By PizzaName",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"pizzaName\":\"Test-2\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7094/pizzaorder/pizzaName",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7094",
+					"path": [
+						"pizzaorder",
+						"pizzaName"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PizzaList By customerContactNumber",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerContactNumber\":\"111-333-222\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7094/pizzaorder/customerContactNumber",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7094",
+					"path": [
+						"pizzaorder",
+						"customerContactNumber"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PizzaList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7094/pizzaorder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7094",
+					"path": [
+						"pizzaorder"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
