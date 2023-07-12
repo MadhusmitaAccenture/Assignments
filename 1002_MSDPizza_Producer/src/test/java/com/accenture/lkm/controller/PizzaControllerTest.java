@@ -2,6 +2,7 @@ package com.accenture.lkm.controller;
 
 import static org.mockito.Matchers.anyInt;
 import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -22,6 +23,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.accenture.lkm.EurekaProducer;
+import com.accenture.lkm.dto.PizzaCustomerContactNumberDto;
 import com.accenture.lkm.dto.PizzaNameDto;
 import com.accenture.lkm.dto.PizzaOrderDto;
 import com.accenture.lkm.service.PizzaService;
@@ -54,13 +56,15 @@ public class PizzaControllerTest {
 
 	private PizzaNameDto nameDto;
 
+	private PizzaCustomerContactNumberDto contactNumberDto;
+
 	public static HttpHeaders getHttpHeaders() {
 		HttpHeaders headers = new HttpHeaders();
 		return headers;
 	}
 
 	@Before
-	public void mySetup() {
+	public void setup() {
 		// this is done to initialize mockito annotations for mocking
 		// prepare the objects for testing
 
@@ -81,6 +85,9 @@ public class PizzaControllerTest {
 
 		nameDto = new PizzaNameDto();
 		nameDto.setPizzaName("test2");
+		
+		contactNumberDto = new PizzaCustomerContactNumberDto();
+		contactNumberDto.setCustomerContactNumber("111-222-333");
 	}
 
 	@Test
@@ -104,4 +111,31 @@ public class PizzaControllerTest {
 				.contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
 	}
 
+	@Test
+	public void getOrderDetailsByContactNumberTest() throws JsonProcessingException, Exception {
+
+		String postUri = "/pizzaorder/customerContactNumber";
+
+		List<PizzaOrderDto> dtoList = Arrays.asList(dto);
+
+		when(pizzaService.getOrderDetailsByContactNumber(contactNumberDto.getCustomerContactNumber())).thenReturn(dtoList);
+
+		mockMVC.perform(post(postUri).headers(headersMock).content(mapper.writeValueAsString(contactNumberDto))
+				.contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
+
+	}
+	
+	@Test
+	public void getPizzaDetails() throws JsonProcessingException, Exception {
+
+		String getUri = "/pizzaorder";
+
+		List<PizzaOrderDto> dtoList = Arrays.asList(dto);
+
+		when(pizzaService.getallDetails()).thenReturn(dtoList);
+
+		mockMVC.perform(get(getUri).headers(headersMock)
+				.contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
+
+	}
 }
