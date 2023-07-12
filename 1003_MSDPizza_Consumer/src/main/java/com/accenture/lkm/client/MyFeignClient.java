@@ -2,6 +2,8 @@ package com.accenture.lkm.client;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,20 +14,20 @@ import com.accenture.lkm.model.PizzaCustomerContactNumberDto;
 import com.accenture.lkm.model.PizzaNameDto;
 import com.accenture.lkm.model.PizzaOrderDto;
 
-@FeignClient(name = "cst-msdpizza-producer")
+@FeignClient(name = "msd-pizza-producer")
 public interface MyFeignClient {
 
-	@GetMapping(value = "pizzaorder")
+	@GetMapping(value = "api/v1/msd/pizzaorder")
 	public ResponseEntity<List<PizzaOrderDto>> getPizzaDetails();
 
-	@PostMapping(value = "pizzaorder")
-	public ResponseEntity<String> addPizza(@RequestBody PizzaOrderDto pizzaOrderDTO);
+	@PostMapping(value = "api/v1/msd/pizzaorder")
+	public ResponseEntity<String> addPizza(@Valid @RequestBody PizzaOrderDto pizzaOrderDTO);
 
-	@PostMapping(value = "pizzaorder/pizzaName")
-	public ResponseEntity<List<PizzaOrderDto>> getAllDetailsByPizaaName(@RequestBody PizzaNameDto pizzaNameDto);
+	@PostMapping(value = "api/v1/msd/pizzaorder/pizzaName")
+	public ResponseEntity<List<PizzaOrderDto>> getAllDetailsByPizzaName(@Valid @RequestBody PizzaNameDto pizzaNameDto);
 	
-	@PostMapping(value = "pizzaorder/customerContactNumber")
+	@PostMapping(value = "api/v1/msd/pizzaorder/customerContactNumber")
 	public ResponseEntity<List<PizzaOrderDto>> getOrderDetailsByContactNumber(
-			@RequestBody PizzaCustomerContactNumberDto pizzaCustContactNumberDto);
+			@Valid @RequestBody PizzaCustomerContactNumberDto pizzaCustContactNumberDto);
 
 }

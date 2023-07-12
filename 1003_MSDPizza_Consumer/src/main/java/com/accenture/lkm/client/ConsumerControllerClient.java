@@ -2,6 +2,8 @@ package com.accenture.lkm.client;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,7 +23,7 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @RefreshScope
 @RestController
-@RequestMapping("pizzaorder")
+@RequestMapping("api/v1/msd/pizzaorder")
 public class ConsumerControllerClient {
 
 	@Autowired
@@ -33,7 +35,7 @@ public class ConsumerControllerClient {
 
 	@Value("${cst_property2:Hello default 2}")
 	private String message2;
-	
+
 	@Value("${fallback_message:Connection Error! }")
 	private String fallbackMsg;
 
@@ -78,7 +80,7 @@ public class ConsumerControllerClient {
 	 */
 	@PostMapping
 	@HystrixCommand(fallbackMethod = "getFallBackForAddPizza", commandKey = "msdKeyCompute")
-	public ResponseEntity<String> addPizza(@RequestBody PizzaOrderDto pizzaOrderDTO) {
+	public ResponseEntity<String> addPizza(@Valid @RequestBody PizzaOrderDto pizzaOrderDTO) {
 		return feignClient.addPizza(pizzaOrderDTO);
 	}
 
@@ -87,7 +89,7 @@ public class ConsumerControllerClient {
 	 * 
 	 * @return
 	 */
-	public ResponseEntity<String> getFallBackForAddPizza(PizzaOrderDto pizzaOrderDTO) {
+	public ResponseEntity<String> getFallBackForAddPizza(@Valid @RequestBody PizzaOrderDto pizzaOrderDTO) {
 		logger.warn(fallbackMsg);
 		return new ResponseEntity<String>(HttpStatus.EXPECTATION_FAILED);
 	}
@@ -99,18 +101,19 @@ public class ConsumerControllerClient {
 	 * @return
 	 */
 	@PostMapping(value = "/pizzaName")
-	@HystrixCommand(fallbackMethod = "getFallBackForGetAllDetailsByPizaaName", commandKey = "msdKeyCompute")
-	public ResponseEntity<List<PizzaOrderDto>> getAllDetailsByPizaaName(@RequestBody PizzaNameDto pizzaNameDto) {
-		return feignClient.getAllDetailsByPizaaName(pizzaNameDto);
+	@HystrixCommand(fallbackMethod = "getFallBackForGetAllDetailsByPizzaName", commandKey = "msdKeyCompute")
+	public ResponseEntity<List<PizzaOrderDto>> getAllDetailsByPizzaName(@Valid @RequestBody PizzaNameDto pizzaNameDto) {
+		return feignClient.getAllDetailsByPizzaName(pizzaNameDto);
 	}
 
 	/**
 	 * Fallback method for getAllDetailsByPizaaName
 	 * 
-	 * @param pizzaNameDto
+	 * @param pizzaOrderDto
 	 * @return
 	 */
-	public ResponseEntity<List<PizzaOrderDto>> getFallBackForGetAllDetailsByPizaaName(PizzaNameDto pizzaNameDto) {
+	public ResponseEntity<List<PizzaOrderDto>> getFallBackForGetAllDetailsByPizzaName(
+			@Valid @RequestBody PizzaNameDto pizzaNameDto) {
 		logger.warn(fallbackMsg);
 		return new ResponseEntity<List<PizzaOrderDto>>(HttpStatus.EXPECTATION_FAILED);
 	}
@@ -124,7 +127,7 @@ public class ConsumerControllerClient {
 	@PostMapping(value = "customerContactNumber")
 	@HystrixCommand(fallbackMethod = "getFallBackForGetOrderDetailsByContactNumber", commandKey = "msdKeyCompute")
 	public ResponseEntity<List<PizzaOrderDto>> getOrderDetailsByContactNumber(
-			@RequestBody PizzaCustomerContactNumberDto pizzaCustContactNumberDto) {
+			 @Valid @RequestBody PizzaCustomerContactNumberDto pizzaCustContactNumberDto) {
 		return feignClient.getOrderDetailsByContactNumber(pizzaCustContactNumberDto);
 	}
 

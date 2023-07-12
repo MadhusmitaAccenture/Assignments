@@ -196,3 +196,309 @@
 2023-07-13 02:37:16.372  INFO [msd-pizza-producer,,,] 12268 --- [Thread-6] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
 2023-07-13 02:37:16.374  INFO [msd-pizza-producer,,,] 12268 --- [Thread-6] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
 2023-07-13 02:37:17.392  INFO [msd-pizza-producer,,,] 12268 --- [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-13 02:39:55.278  INFO [msd-pizza-producer,,,] 6056 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-07-13 02:44:55.279  INFO [msd-pizza-producer,,,] 6056 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-07-13 02:49:24.705  INFO [msd-pizza-producer,,,] 6056 --- [http-nio-7092-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2023-07-13 02:49:24.705  INFO [msd-pizza-producer,,,] 6056 --- [http-nio-7092-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2023-07-13 02:49:24.755  INFO [msd-pizza-producer,,,] 6056 --- [http-nio-7092-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 50 ms
+2023-07-13 02:49:24.798 DEBUG [msd-pizza-producer,65aee435942ce804,55ae4f804372262d,true] 6056 --- [http-nio-7092-exec-1] c.a.lkm.controller.PizzaController       : Entry to getPizzaDetails Controller for find all orders
+2023-07-13 02:49:24.831  INFO [msd-pizza-producer,65aee435942ce804,55ae4f804372262d,true] 6056 --- [http-nio-7092-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2023-07-13 02:49:24.992 DEBUG [msd-pizza-producer,65aee435942ce804,55ae4f804372262d,true] 6056 --- [http-nio-7092-exec-1] c.a.lkm.controller.PizzaController       : Exit from getPizzaDetails Controller for find all orders
+2023-07-13 02:49:26.300  WARN [msd-pizza-producer,,,] 6056 --- [AsyncReporter(org.springframework.cloud.sleuth.zipkin.RestTemplateSender@1c61f9bf)] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 1 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v1/spans": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect)
+
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v1/spans": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:666) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:628) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:590) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin.RestTemplateSender.post(RestTemplateSender.java:73) ~[spring-cloud-sleuth-zipkin-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin.RestTemplateSender.sendSpans(RestTemplateSender.java:46) ~[spring-cloud-sleuth-zipkin-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at zipkin.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:245) [zipkin-reporter-1.0.0.jar:na]
+	at zipkin.reporter.AsyncReporter$Builder.lambda$build$0(AsyncReporter.java:166) [zipkin-reporter-1.0.0.jar:na]
+	at zipkin.reporter.AsyncReporter$Builder$$Lambda$1.run(Unknown Source) [zipkin-reporter-1.0.0.jar:na]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_332]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_332]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79) ~[na:1.8.0_332]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_332]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_332]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_332]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_332]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_332]
+	at java.net.Socket.connect(Socket.java:607) ~[na:1.8.0_332]
+	at java.net.Socket.connect(Socket.java:556) ~[na:1.8.0_332]
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1228) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990) ~[na:1.8.0_332]
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:78) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:652) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	... 8 common frames omitted
+
+2023-07-13 02:49:55.282  INFO [msd-pizza-producer,,,] 6056 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-07-13 02:54:55.283  INFO [msd-pizza-producer,,,] 6056 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-07-13 02:58:16.743 DEBUG [msd-pizza-producer,fa0ec2d662bd0639,44843a168c9576f6,true] 6056 --- [http-nio-7092-exec-3] c.a.lkm.controller.PizzaController       : Entry to addPizza Controller
+2023-07-13 02:58:16.778 DEBUG [msd-pizza-producer,fa0ec2d662bd0639,44843a168c9576f6,true] 6056 --- [http-nio-7092-exec-3] c.a.lkm.controller.PizzaController       : Exit from addPizza Controller with id: 15
+2023-07-13 02:58:17.905  WARN [msd-pizza-producer,,,] 6056 --- [AsyncReporter(org.springframework.cloud.sleuth.zipkin.RestTemplateSender@1c61f9bf)] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 1 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v1/spans": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect)
+
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v1/spans": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:666) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:628) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:590) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin.RestTemplateSender.post(RestTemplateSender.java:73) ~[spring-cloud-sleuth-zipkin-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin.RestTemplateSender.sendSpans(RestTemplateSender.java:46) ~[spring-cloud-sleuth-zipkin-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at zipkin.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:245) [zipkin-reporter-1.0.0.jar:na]
+	at zipkin.reporter.AsyncReporter$Builder.lambda$build$0(AsyncReporter.java:166) [zipkin-reporter-1.0.0.jar:na]
+	at zipkin.reporter.AsyncReporter$Builder$$Lambda$1.run(Unknown Source) [zipkin-reporter-1.0.0.jar:na]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_332]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_332]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79) ~[na:1.8.0_332]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_332]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_332]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_332]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_332]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_332]
+	at java.net.Socket.connect(Socket.java:607) ~[na:1.8.0_332]
+	at java.net.Socket.connect(Socket.java:556) ~[na:1.8.0_332]
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1228) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990) ~[na:1.8.0_332]
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:78) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:652) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	... 8 common frames omitted
+
+2023-07-13 02:59:55.284  INFO [msd-pizza-producer,,,] 6056 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-07-13 03:01:42.673 DEBUG [msd-pizza-producer,a80cb029e018bdf2,65cb097348212cf5,true] 6056 --- [http-nio-7092-exec-5] c.a.lkm.controller.PizzaController       : Entry to addPizza Controller
+2023-07-13 03:01:42.680 DEBUG [msd-pizza-producer,a80cb029e018bdf2,65cb097348212cf5,true] 6056 --- [http-nio-7092-exec-5] c.a.lkm.controller.PizzaController       : Exit from addPizza Controller with id: 16
+2023-07-13 03:01:44.134  WARN [msd-pizza-producer,,,] 6056 --- [AsyncReporter(org.springframework.cloud.sleuth.zipkin.RestTemplateSender@1c61f9bf)] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 1 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v1/spans": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect)
+
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v1/spans": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:666) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:628) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:590) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin.RestTemplateSender.post(RestTemplateSender.java:73) ~[spring-cloud-sleuth-zipkin-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin.RestTemplateSender.sendSpans(RestTemplateSender.java:46) ~[spring-cloud-sleuth-zipkin-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at zipkin.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:245) [zipkin-reporter-1.0.0.jar:na]
+	at zipkin.reporter.AsyncReporter$Builder.lambda$build$0(AsyncReporter.java:166) [zipkin-reporter-1.0.0.jar:na]
+	at zipkin.reporter.AsyncReporter$Builder$$Lambda$1.run(Unknown Source) [zipkin-reporter-1.0.0.jar:na]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_332]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_332]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79) ~[na:1.8.0_332]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_332]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_332]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_332]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_332]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_332]
+	at java.net.Socket.connect(Socket.java:607) ~[na:1.8.0_332]
+	at java.net.Socket.connect(Socket.java:556) ~[na:1.8.0_332]
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1228) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990) ~[na:1.8.0_332]
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:78) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:652) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	... 8 common frames omitted
+
+2023-07-13 03:04:55.286  INFO [msd-pizza-producer,,,] 6056 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-07-13 03:06:45.112 DEBUG [msd-pizza-producer,f81fa4b1b808b8c6,3d6566fe42fb5bd7,true] 6056 --- [http-nio-7092-exec-7] c.a.lkm.controller.PizzaController       : Entry to getallDetailsByPizaaName Controller
+2023-07-13 03:06:45.137 DEBUG [msd-pizza-producer,f81fa4b1b808b8c6,3d6566fe42fb5bd7,true] 6056 --- [http-nio-7092-exec-7] c.a.lkm.controller.PizzaController       : Exit from getallDetailsByPizaaName Controller
+2023-07-13 03:06:46.533  WARN [msd-pizza-producer,,,] 6056 --- [AsyncReporter(org.springframework.cloud.sleuth.zipkin.RestTemplateSender@1c61f9bf)] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 1 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v1/spans": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect)
+
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v1/spans": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:666) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:628) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:590) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin.RestTemplateSender.post(RestTemplateSender.java:73) ~[spring-cloud-sleuth-zipkin-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin.RestTemplateSender.sendSpans(RestTemplateSender.java:46) ~[spring-cloud-sleuth-zipkin-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at zipkin.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:245) [zipkin-reporter-1.0.0.jar:na]
+	at zipkin.reporter.AsyncReporter$Builder.lambda$build$0(AsyncReporter.java:166) [zipkin-reporter-1.0.0.jar:na]
+	at zipkin.reporter.AsyncReporter$Builder$$Lambda$1.run(Unknown Source) [zipkin-reporter-1.0.0.jar:na]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_332]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_332]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79) ~[na:1.8.0_332]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_332]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_332]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_332]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_332]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_332]
+	at java.net.Socket.connect(Socket.java:607) ~[na:1.8.0_332]
+	at java.net.Socket.connect(Socket.java:556) ~[na:1.8.0_332]
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1228) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990) ~[na:1.8.0_332]
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:78) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:652) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	... 8 common frames omitted
+
+2023-07-13 03:07:08.719 DEBUG [msd-pizza-producer,e28d4a1485244d15,2e0bde26f5acaacf,true] 6056 --- [http-nio-7092-exec-9] c.a.lkm.controller.PizzaController       : Entry to getOrderDetailsByContactNumber Controller
+2023-07-13 03:07:08.728 DEBUG [msd-pizza-producer,e28d4a1485244d15,2e0bde26f5acaacf,true] 6056 --- [http-nio-7092-exec-9] c.a.lkm.controller.PizzaController       : Exit from getOrderDetailsByContactNumber Controller
+2023-07-13 03:07:10.586  WARN [msd-pizza-producer,,,] 6056 --- [AsyncReporter(org.springframework.cloud.sleuth.zipkin.RestTemplateSender@1c61f9bf)] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 1 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v1/spans": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect)
+
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v1/spans": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:666) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:628) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:590) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin.RestTemplateSender.post(RestTemplateSender.java:73) ~[spring-cloud-sleuth-zipkin-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin.RestTemplateSender.sendSpans(RestTemplateSender.java:46) ~[spring-cloud-sleuth-zipkin-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at zipkin.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:245) [zipkin-reporter-1.0.0.jar:na]
+	at zipkin.reporter.AsyncReporter$Builder.lambda$build$0(AsyncReporter.java:166) [zipkin-reporter-1.0.0.jar:na]
+	at zipkin.reporter.AsyncReporter$Builder$$Lambda$1.run(Unknown Source) [zipkin-reporter-1.0.0.jar:na]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_332]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_332]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79) ~[na:1.8.0_332]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_332]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_332]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_332]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_332]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_332]
+	at java.net.Socket.connect(Socket.java:607) ~[na:1.8.0_332]
+	at java.net.Socket.connect(Socket.java:556) ~[na:1.8.0_332]
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1228) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990) ~[na:1.8.0_332]
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:78) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:652) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	... 8 common frames omitted
+
+2023-07-13 03:07:16.528 DEBUG [msd-pizza-producer,d4e92019d8852dff,3395353ac21b2aab,true] 6056 --- [http-nio-7092-exec-10] c.a.lkm.controller.PizzaController       : Entry to getOrderDetailsByContactNumber Controller
+2023-07-13 03:07:16.532 DEBUG [msd-pizza-producer,d4e92019d8852dff,3395353ac21b2aab,true] 6056 --- [http-nio-7092-exec-10] c.a.lkm.controller.PizzaController       : Exit from getOrderDetailsByContactNumber Controller
+2023-07-13 03:07:17.587  WARN [msd-pizza-producer,,,] 6056 --- [AsyncReporter(org.springframework.cloud.sleuth.zipkin.RestTemplateSender@1c61f9bf)] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 1 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v1/spans": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect)
+
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v1/spans": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:666) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:628) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:590) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin.RestTemplateSender.post(RestTemplateSender.java:73) ~[spring-cloud-sleuth-zipkin-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin.RestTemplateSender.sendSpans(RestTemplateSender.java:46) ~[spring-cloud-sleuth-zipkin-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at zipkin.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:245) [zipkin-reporter-1.0.0.jar:na]
+	at zipkin.reporter.AsyncReporter$Builder.lambda$build$0(AsyncReporter.java:166) [zipkin-reporter-1.0.0.jar:na]
+	at zipkin.reporter.AsyncReporter$Builder$$Lambda$1.run(Unknown Source) [zipkin-reporter-1.0.0.jar:na]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_332]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_332]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79) ~[na:1.8.0_332]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_332]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_332]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_332]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_332]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_332]
+	at java.net.Socket.connect(Socket.java:607) ~[na:1.8.0_332]
+	at java.net.Socket.connect(Socket.java:556) ~[na:1.8.0_332]
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1228) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990) ~[na:1.8.0_332]
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:78) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:652) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	... 8 common frames omitted
+
+2023-07-13 03:07:52.755 DEBUG [msd-pizza-producer,b627853f930646ca,23e2a2bb1656a24f,true] 6056 --- [http-nio-7092-exec-3] c.a.lkm.controller.PizzaController       : Entry to getOrderDetailsByContactNumber Controller
+2023-07-13 03:07:52.760 DEBUG [msd-pizza-producer,b627853f930646ca,23e2a2bb1656a24f,true] 6056 --- [http-nio-7092-exec-3] c.a.lkm.controller.PizzaController       : Exit from getOrderDetailsByContactNumber Controller
+2023-07-13 03:07:54.624  WARN [msd-pizza-producer,,,] 6056 --- [AsyncReporter(org.springframework.cloud.sleuth.zipkin.RestTemplateSender@1c61f9bf)] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 1 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v1/spans": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect)
+
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v1/spans": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:666) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:628) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:590) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin.RestTemplateSender.post(RestTemplateSender.java:73) ~[spring-cloud-sleuth-zipkin-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin.RestTemplateSender.sendSpans(RestTemplateSender.java:46) ~[spring-cloud-sleuth-zipkin-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at zipkin.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:245) [zipkin-reporter-1.0.0.jar:na]
+	at zipkin.reporter.AsyncReporter$Builder.lambda$build$0(AsyncReporter.java:166) [zipkin-reporter-1.0.0.jar:na]
+	at zipkin.reporter.AsyncReporter$Builder$$Lambda$1.run(Unknown Source) [zipkin-reporter-1.0.0.jar:na]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_332]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_332]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79) ~[na:1.8.0_332]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_332]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_332]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_332]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_332]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_332]
+	at java.net.Socket.connect(Socket.java:607) ~[na:1.8.0_332]
+	at java.net.Socket.connect(Socket.java:556) ~[na:1.8.0_332]
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1228) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990) ~[na:1.8.0_332]
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:78) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:652) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	... 8 common frames omitted
+
+2023-07-13 03:09:55.288  INFO [msd-pizza-producer,,,] 6056 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-07-13 03:13:55.379  INFO [msd-pizza-producer,,,] 6056 --- [RMI TCP Connection(46)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-07-13 03:13:55.380  INFO [msd-pizza-producer,,,] 6056 --- [RMI TCP Connection(46)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@23bff419: startup date [Thu Jul 13 02:34:44 IST 2023]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1c1bbc4e
+2023-07-13 03:13:55.381  INFO [msd-pizza-producer,,,] 6056 --- [RMI TCP Connection(46)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application msd-pizza-producer with eureka with status DOWN
+2023-07-13 03:13:55.381  WARN [msd-pizza-producer,,,] 6056 --- [RMI TCP Connection(46)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1689198235381, current=DOWN, previous=UP]
+2023-07-13 03:13:55.381  INFO [msd-pizza-producer,,,] 6056 --- [RMI TCP Connection(46)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2023-07-13 03:13:55.381  INFO [msd-pizza-producer,,,] 6056 --- [RMI TCP Connection(46)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2023-07-13 03:13:55.386  INFO [msd-pizza-producer,,,] 6056 --- [RMI TCP Connection(46)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSD-PIZZA-PRODUCER/172.32.9.54:msd-pizza-producer:7092 - deregister  status: 200
+2023-07-13 03:13:55.395  INFO [msd-pizza-producer,,,] 6056 --- [RMI TCP Connection(46)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2023-07-13 03:13:55.397  INFO [msd-pizza-producer,,,] 6056 --- [RMI TCP Connection(46)-127.0.0.1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2023-07-13 03:13:56.398  WARN [msd-pizza-producer,,,] 6056 --- [RMI TCP Connection(46)-127.0.0.1] z.r.AsyncReporter$BoundedAsyncReporter   : Timed out waiting for in-flight spans to send
+2023-07-13 03:13:56.399  INFO [msd-pizza-producer,,,] 6056 --- [RMI TCP Connection(46)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2023-07-13 03:13:56.399  INFO [msd-pizza-producer,,,] 6056 --- [RMI TCP Connection(46)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2023-07-13 03:13:56.401  INFO [msd-pizza-producer,,,] 6056 --- [RMI TCP Connection(46)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-13 03:13:56.487  INFO [msd-pizza-producer,,,] 6056 --- [RMI TCP Connection(46)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service Tomcat
+2023-07-13 03:13:56.489  INFO [msd-pizza-producer,,,] 6056 --- [localhost-startStop-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
