@@ -45,6 +45,12 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-zipkin</artifactId>
 		</dependency>
+		
+		<!-- For Unit Testing -->
+        <dependency>
+        	<groupId>org.springframework.boot</groupId>
+        	<artifactId>spring-boot-starter-test</artifactId>
+        </dependency>		
 	</dependencies>
 
 	<dependencyManagement>
