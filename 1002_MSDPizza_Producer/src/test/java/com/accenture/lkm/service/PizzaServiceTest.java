@@ -20,7 +20,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpHeaders;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.accenture.lkm.EurekaProducer;
+import com.accenture.lkm.PizzaOrderProducer;
 import com.accenture.lkm.dao.PizzaDao;
 import com.accenture.lkm.dto.PizzaCustomerContactNumberDto;
 import com.accenture.lkm.dto.PizzaNameDto;
@@ -33,7 +33,7 @@ import com.accenture.lkm.model.PizzaOrderEntity;
 //Following Annotation is replacement of @Configuration annotation
 //it is used to point to the files having the configuration and helps to load and start the context
 //Context will be cached for all test cases and classes
-@SpringBootTest(classes = EurekaProducer.class)
+@SpringBootTest(classes = PizzaOrderProducer.class)
 
 //Following Annotation is used to run each test case in a individual Transaction
 //with default strategy as rollback, as service layer is hitting DB layer

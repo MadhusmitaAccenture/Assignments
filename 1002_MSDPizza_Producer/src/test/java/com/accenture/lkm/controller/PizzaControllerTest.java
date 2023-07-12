@@ -22,7 +22,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import com.accenture.lkm.EurekaProducer;
+import com.accenture.lkm.PizzaOrderProducer;
 import com.accenture.lkm.dto.PizzaCustomerContactNumberDto;
 import com.accenture.lkm.dto.PizzaNameDto;
 import com.accenture.lkm.dto.PizzaOrderDto;
@@ -36,7 +36,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 //Following Annotation is replacement of @Configuration annotation
 //it is used to point to the files having the configuration and helps to load and start the context
 //Context will be cached for all test cases and classes
-@SpringBootTest(classes = EurekaProducer.class)
+@SpringBootTest(classes = PizzaOrderProducer.class)
 //No @Transactional Required as database is never hit
 public class PizzaControllerTest {
 
@@ -57,6 +57,8 @@ public class PizzaControllerTest {
 	private PizzaNameDto nameDto;
 
 	private PizzaCustomerContactNumberDto contactNumberDto;
+	
+	private String urlPrefix = "/api/v1/msd/pizzaorder";
 
 	public static HttpHeaders getHttpHeaders() {
 		HttpHeaders headers = new HttpHeaders();
@@ -92,7 +94,7 @@ public class PizzaControllerTest {
 
 	@Test
 	public void addPizzaTest() throws Exception {
-		String postUri = "/pizzaorder";
+		String postUri = urlPrefix;
 		when(pizzaService.addPizza(dto)).thenReturn(anyInt());
 
 		mockMVC.perform(post(postUri).headers(headersMock).content(mapper.writeValueAsString(dto))
@@ -101,7 +103,7 @@ public class PizzaControllerTest {
 
 	@Test
 	public void getallDetailsByPizaaNameTest() throws JsonProcessingException, Exception {
-		String postUri = "/pizzaorder/pizzaName";
+		String postUri = urlPrefix + "/pizzaName";
 
 		List<PizzaOrderDto> dtoList = Arrays.asList(dto);
 
@@ -114,7 +116,7 @@ public class PizzaControllerTest {
 	@Test
 	public void getOrderDetailsByContactNumberTest() throws JsonProcessingException, Exception {
 
-		String postUri = "/pizzaorder/customerContactNumber";
+		String postUri = urlPrefix + "/customerContactNumber";
 
 		List<PizzaOrderDto> dtoList = Arrays.asList(dto);
 
@@ -128,7 +130,7 @@ public class PizzaControllerTest {
 	@Test
 	public void getPizzaDetails() throws JsonProcessingException, Exception {
 
-		String getUri = "/pizzaorder";
+		String getUri = urlPrefix;
 
 		List<PizzaOrderDto> dtoList = Arrays.asList(dto);
 

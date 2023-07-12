@@ -8,10 +8,10 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class EurekaProducer {
+public class PizzaOrderProducer {
 
     public static void main(String[] args) {
-        SpringApplication.run(EurekaProducer.class, args);
+        SpringApplication.run(PizzaOrderProducer.class, args);
     }
 
     /**

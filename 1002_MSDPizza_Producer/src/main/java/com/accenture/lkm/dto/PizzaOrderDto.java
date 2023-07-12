@@ -1,10 +1,22 @@
 package com.accenture.lkm.dto;
 
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class PizzaOrderDto {
 	private Integer orderId;
+	
+	@NotEmpty
 	private String pizzaName;
+	
+	@NotNull
 	private double bill;
+
+	@NotNull
 	private Integer quantity;
+	
+	@NotEmpty
 	private String customerContactNumber;
 
 	public PizzaOrderDto() {
