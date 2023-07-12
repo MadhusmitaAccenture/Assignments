@@ -27,6 +27,7 @@ public class ConsumerControllerClient {
 	@Autowired
 	private MyFeignClient feignClient;
 
+	// Fetch data from config server
 	@Value("${SimpleValue:Hello default 1}")
 	private String message1;
 
@@ -38,6 +39,11 @@ public class ConsumerControllerClient {
 
 	public static Logger logger = Logger.getLogger(ConsumerControllerClient.class);
 
+	/**
+	 * Test fetching data from config server
+	 * 
+	 * @return
+	 */
 	@RequestMapping("/getMessage")
 	public String getMessage() {
 		return this.message1 + ", " + message2;
