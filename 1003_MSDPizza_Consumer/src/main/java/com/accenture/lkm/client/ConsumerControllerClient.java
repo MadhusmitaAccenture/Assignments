@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +19,7 @@ import com.accenture.lkm.model.PizzaNameDto;
 import com.accenture.lkm.model.PizzaOrderDto;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
+@RefreshScope
 @RestController
 @RequestMapping("pizzaorder")
 public class ConsumerControllerClient {
@@ -24,7 +27,21 @@ public class ConsumerControllerClient {
 	@Autowired
 	private MyFeignClient feignClient;
 
+	@Value("${SimpleValue:Hello default 1}")
+	private String message1;
+
+	@Value("${cst_property2:Hello default 2}")
+	private String message2;
+	
+	@Value("${fallback_message:Connection Error! }")
+	private String fallbackMsg;
+
 	public static Logger logger = Logger.getLogger(ConsumerControllerClient.class);
+
+	@RequestMapping("/getMessage")
+	public String getMessage() {
+		return this.message1 + ", " + message2;
+	}
 
 	/**
 	 * Fetch All Pizza-Order details
@@ -43,7 +60,7 @@ public class ConsumerControllerClient {
 	 * @return
 	 */
 	public ResponseEntity<List<PizzaOrderDto>> getFallBackForGetPizzaDetails() {
-		logger.warn("There is some error. Try after sometime! ");
+		logger.warn(fallbackMsg);
 		return new ResponseEntity<List<PizzaOrderDto>>(HttpStatus.EXPECTATION_FAILED);
 	}
 
@@ -65,11 +82,10 @@ public class ConsumerControllerClient {
 	 * @return
 	 */
 	public ResponseEntity<String> getFallBackForAddPizza(PizzaOrderDto pizzaOrderDTO) {
-		String responseStr = "There is some error. Try after sometime! ";
-		logger.warn(responseStr);
+		logger.warn(fallbackMsg);
 		return new ResponseEntity<String>(HttpStatus.EXPECTATION_FAILED);
 	}
-	
+
 	/**
 	 * Find list of PizzaOrder details by PizzaName
 	 * 
@@ -81,7 +97,7 @@ public class ConsumerControllerClient {
 	public ResponseEntity<List<PizzaOrderDto>> getAllDetailsByPizaaName(@RequestBody PizzaNameDto pizzaNameDto) {
 		return feignClient.getAllDetailsByPizaaName(pizzaNameDto);
 	}
-	
+
 	/**
 	 * Fallback method for getAllDetailsByPizaaName
 	 * 
@@ -89,11 +105,10 @@ public class ConsumerControllerClient {
 	 * @return
 	 */
 	public ResponseEntity<List<PizzaOrderDto>> getFallBackForGetAllDetailsByPizaaName(PizzaNameDto pizzaNameDto) {
-		String responseStr = "There is some error. Try after sometime! ";
-		logger.warn(responseStr);
+		logger.warn(fallbackMsg);
 		return new ResponseEntity<List<PizzaOrderDto>>(HttpStatus.EXPECTATION_FAILED);
 	}
-	
+
 	/**
 	 * Find PizzaOrder list by CustomerContactNumber
 	 * 
@@ -106,16 +121,16 @@ public class ConsumerControllerClient {
 			@RequestBody PizzaCustomerContactNumberDto pizzaCustContactNumberDto) {
 		return feignClient.getOrderDetailsByContactNumber(pizzaCustContactNumberDto);
 	}
-	
+
 	/**
 	 * Fallback method for getOrderDetailsByContactNumber
 	 * 
 	 * @param pizzaCustContactNumberDto
 	 * @return
 	 */
-	public ResponseEntity<List<PizzaOrderDto>> getFallBackForGetOrderDetailsByContactNumber(PizzaCustomerContactNumberDto pizzaCustContactNumberDto) {
-		String responseStr = "There is some error. Try after sometime! ";
-		logger.warn(responseStr);
+	public ResponseEntity<List<PizzaOrderDto>> getFallBackForGetOrderDetailsByContactNumber(
+			PizzaCustomerContactNumberDto pizzaCustContactNumberDto) {
+		logger.warn(fallbackMsg);
 		return new ResponseEntity<List<PizzaOrderDto>>(HttpStatus.EXPECTATION_FAILED);
 	}
 }

@@ -40,6 +40,25 @@
 			"response": []
 		},
 		{
+			"name": "PizzaList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7094/pizzaorder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7094",
+					"path": [
+						"pizzaorder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "PizzaList By PizzaName",
 			"request": {
 				"method": "POST",
@@ -98,19 +117,131 @@
 			"response": []
 		},
 		{
-			"name": "PizzaList",
+			"name": "Feign - PizzaList",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:7094/pizzaorder",
+					"raw": "http://localhost:7095/pizzaorder",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "7094",
+					"port": "7095",
 					"path": [
 						"pizzaorder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Feign - AddPizza",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pizzaName\":\"Test-2\",\r\n    \"bill\" :11.3,\r\n    \"quantity\": 1,\r\n    \"customerContactNumber\":\"111-222-333\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:7095/pizzaorder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7095",
+					"path": [
+						"pizzaorder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Feign - PizzaList By PizzaName",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"pizzaName\":\"Test-2\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7095/pizzaorder/pizzaName",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7095",
+					"path": [
+						"pizzaorder",
+						"pizzaName"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Feign - PizzaList By customerContactNumber",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerContactNumber\":\"111-222-333\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7095/pizzaorder/customerContactNumber",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7095",
+					"path": [
+						"pizzaorder",
+						"customerContactNumber"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ConfigServer Message Test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7095/pizzaorder/getMessage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7095",
+					"path": [
+						"pizzaorder",
+						"getMessage"
 					]
 				}
 			},
