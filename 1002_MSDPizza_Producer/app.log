@@ -502,3 +502,224 @@ Caused by: java.net.ConnectException: Connection refused: connect
 2023-07-13 03:13:56.401  INFO [msd-pizza-producer,,,] 6056 --- [RMI TCP Connection(46)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-07-13 03:13:56.487  INFO [msd-pizza-producer,,,] 6056 --- [RMI TCP Connection(46)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service Tomcat
 2023-07-13 03:13:56.489  INFO [msd-pizza-producer,,,] 6056 --- [localhost-startStop-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-07-13 03:32:39.511  INFO [msd-pizza-producer,,,] 8724 --- [main] com.accenture.lkm.PizzaOrderProducer     : No active profile set, falling back to default profiles: default
+2023-07-13 03:32:39.527  INFO [msd-pizza-producer,,,] 8724 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4983159f: startup date [Thu Jul 13 03:32:39 IST 2023]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@55fe41ea
+2023-07-13 03:32:40.561  INFO [msd-pizza-producer,,,] 8724 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=aae55333-29bf-352e-909e-45fe0844fe55
+2023-07-13 03:32:40.590  INFO [msd-pizza-producer,,,] 8724 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2023-07-13 03:32:40.702  INFO [msd-pizza-producer,,,] 8724 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.sleuth.instrument.async.AsyncDefaultAutoConfiguration$DefaultAsyncConfigurerSupport' of type [org.springframework.cloud.sleuth.instrument.async.AsyncDefaultAutoConfiguration$DefaultAsyncConfigurerSupport$$EnhancerBySpringCGLIB$$d6ed1c00] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-07-13 03:32:40.796  INFO [msd-pizza-producer,,,] 8724 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.sleuth.annotation.SleuthAnnotationAutoConfiguration' of type [org.springframework.cloud.sleuth.annotation.SleuthAnnotationAutoConfiguration$$EnhancerBySpringCGLIB$$9c10c46f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-07-13 03:32:41.031  INFO [msd-pizza-producer,,,] 8724 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sleuthAdvisorConfig' of type [org.springframework.cloud.sleuth.annotation.SleuthAdvisorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-07-13 03:32:41.039  INFO [msd-pizza-producer,,,] 8724 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$99ab7e3d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-07-13 03:32:41.115  INFO [msd-pizza-producer,,,] 8724 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$b5c5813a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-07-13 03:32:41.142  INFO [msd-pizza-producer,,,] 8724 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.sleuth.instrument.async.AsyncDefaultAutoConfiguration' of type [org.springframework.cloud.sleuth.instrument.async.AsyncDefaultAutoConfiguration$$EnhancerBySpringCGLIB$$818f2a5c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-07-13 03:32:41.164  INFO [msd-pizza-producer,,,] 8724 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.sleuth.instrument.web.client.TraceWebClientAutoConfiguration$TraceOAuthConfiguration' of type [org.springframework.cloud.sleuth.instrument.web.client.TraceWebClientAutoConfiguration$TraceOAuthConfiguration$$EnhancerBySpringCGLIB$$dea8109c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-07-13 03:32:41.692  INFO [msd-pizza-producer,,,] 8724 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 7092 (http)
+2023-07-13 03:32:41.703  INFO [msd-pizza-producer,,,] 8724 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2023-07-13 03:32:41.704  INFO [msd-pizza-producer,,,] 8724 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.11
+2023-07-13 03:32:41.826  INFO [msd-pizza-producer,,,] 8724 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-07-13 03:32:41.826  INFO [msd-pizza-producer,,,] 8724 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2299 ms
+2023-07-13 03:32:42.350  INFO [msd-pizza-producer,,,] 8724 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2023-07-13 03:32:42.351  INFO [msd-pizza-producer,,,] 8724 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'traceFilter' to: [/*]
+2023-07-13 03:32:42.351  INFO [msd-pizza-producer,,,] 8724 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2023-07-13 03:32:42.351  INFO [msd-pizza-producer,,,] 8724 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2023-07-13 03:32:42.351  INFO [msd-pizza-producer,,,] 8724 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2023-07-13 03:32:42.352  INFO [msd-pizza-producer,,,] 8724 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2023-07-13 03:32:43.714  INFO [msd-pizza-producer,,,] 8724 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2023-07-13 03:32:43.739  INFO [msd-pizza-producer,,,] 8724 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2023-07-13 03:32:43.908  INFO [msd-pizza-producer,,,] 8724 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2023-07-13 03:32:43.909  INFO [msd-pizza-producer,,,] 8724 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2023-07-13 03:32:43.911  INFO [msd-pizza-producer,,,] 8724 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2023-07-13 03:32:43.994  INFO [msd-pizza-producer,,,] 8724 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2023-07-13 03:32:44.268  INFO [msd-pizza-producer,,,] 8724 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-07-13 03:32:45.040  INFO [msd-pizza-producer,,,] 8724 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-13 03:32:46.754  WARN [msd-pizza-producer,,,] 8724 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-07-13 03:32:46.755  INFO [msd-pizza-producer,,,] 8724 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-07-13 03:32:46.762  WARN [msd-pizza-producer,,,] 8724 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-07-13 03:32:46.762  INFO [msd-pizza-producer,,,] 8724 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-07-13 03:32:47.413  INFO [msd-pizza-producer,,,] 8724 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4983159f: startup date [Thu Jul 13 03:32:39 IST 2023]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@55fe41ea
+2023-07-13 03:32:47.657  INFO [msd-pizza-producer,,,] 8724 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/v1/msd/pizzaorder],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.accenture.lkm.controller.PizzaController.addPizza(com.accenture.lkm.dto.PizzaOrderDto)
+2023-07-13 03:32:47.658  INFO [msd-pizza-producer,,,] 8724 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/v1/msd/pizzaorder],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.accenture.lkm.dto.PizzaOrderDto>> com.accenture.lkm.controller.PizzaController.getPizzaDetails()
+2023-07-13 03:32:47.659  INFO [msd-pizza-producer,,,] 8724 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/v1/msd/pizzaorder/pizzaName],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.accenture.lkm.dto.PizzaOrderDto>> com.accenture.lkm.controller.PizzaController.getallDetailsByPizaaName(com.accenture.lkm.dto.PizzaNameDto)
+2023-07-13 03:32:47.659  INFO [msd-pizza-producer,,,] 8724 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/v1/msd/pizzaorder/customerContactNumber],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.accenture.lkm.dto.PizzaOrderDto>> com.accenture.lkm.controller.PizzaController.getOrderDetailsByContactNumber(com.accenture.lkm.dto.PizzaCustomerContactNumberDto)
+2023-07-13 03:32:47.661  INFO [msd-pizza-producer,,,] 8724 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2023-07-13 03:32:47.662  INFO [msd-pizza-producer,,,] 8724 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2023-07-13 03:32:47.832  INFO [msd-pizza-producer,,,] 8724 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2023-07-13 03:32:47.832  INFO [msd-pizza-producer,,,] 8724 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2023-07-13 03:32:47.941  INFO [msd-pizza-producer,,,] 8724 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2023-07-13 03:32:49.801  INFO [msd-pizza-producer,,,] 8724 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 
+2023-07-13 03:32:49.970  INFO [msd-pizza-producer,,,] 8724 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2023-07-13 03:32:49.978  INFO [msd-pizza-producer,,,] 8724 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2023-07-13 03:32:49.980  INFO [msd-pizza-producer,,,] 8724 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2023-07-13 03:32:49.982  INFO [msd-pizza-producer,,,] 8724 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2023-07-13 03:32:49.984  INFO [msd-pizza-producer,,,] 8724 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2023-07-13 03:32:49.996  INFO [msd-pizza-producer,,,] 8724 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2023-07-13 03:32:50.007  INFO [msd-pizza-producer,,,] 8724 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=4983159f,type=ConfigurationPropertiesRebinder]
+2023-07-13 03:32:50.229  INFO [msd-pizza-producer,,,] 8724 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2023-07-13 03:32:50.238  INFO [msd-pizza-producer,,,] 8724 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-07-13 03:32:50.304  INFO [msd-pizza-producer,,,] 8724 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-07-13 03:32:50.455  INFO [msd-pizza-producer,,,] 8724 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2023-07-13 03:32:50.457  INFO [msd-pizza-producer,,,] 8724 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2023-07-13 03:32:50.582  INFO [msd-pizza-producer,,,] 8724 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2023-07-13 03:32:50.583  INFO [msd-pizza-producer,,,] 8724 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2023-07-13 03:32:51.061  INFO [msd-pizza-producer,,,] 8724 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-07-13 03:32:51.122  INFO [msd-pizza-producer,,,] 8724 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-07-13 03:32:51.122  INFO [msd-pizza-producer,,,] 8724 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-07-13 03:32:51.122  INFO [msd-pizza-producer,,,] 8724 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-07-13 03:32:51.122  INFO [msd-pizza-producer,,,] 8724 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-07-13 03:32:51.122  INFO [msd-pizza-producer,,,] 8724 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-07-13 03:32:51.122  INFO [msd-pizza-producer,,,] 8724 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-07-13 03:32:51.122  INFO [msd-pizza-producer,,,] 8724 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-07-13 03:32:51.318  INFO [msd-pizza-producer,,,] 8724 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-07-13 03:32:51.319  INFO [msd-pizza-producer,,,] 8724 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-07-13 03:32:51.322  INFO [msd-pizza-producer,,,] 8724 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-07-13 03:32:51.325  INFO [msd-pizza-producer,,,] 8724 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1689199371325 with initial instances count: 2
+2023-07-13 03:32:51.455  INFO [msd-pizza-producer,,,] 8724 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application msd-pizza-producer with eureka with status UP
+2023-07-13 03:32:51.456  INFO [msd-pizza-producer,,,] 8724 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1689199371456, current=UP, previous=STARTING]
+2023-07-13 03:32:51.458  INFO [msd-pizza-producer,,,] 8724 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSD-PIZZA-PRODUCER/172.32.9.54:msd-pizza-producer:7092: registering service...
+2023-07-13 03:32:51.496  INFO [msd-pizza-producer,,,] 8724 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSD-PIZZA-PRODUCER/172.32.9.54:msd-pizza-producer:7092 - registration status: 204
+2023-07-13 03:32:51.521  INFO [msd-pizza-producer,,,] 8724 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 7092 (http)
+2023-07-13 03:32:51.522  INFO [msd-pizza-producer,,,] 8724 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 7092
+2023-07-13 03:32:51.526  INFO [msd-pizza-producer,,,] 8724 --- [main] com.accenture.lkm.PizzaOrderProducer     : Started PizzaOrderProducer in 13.242 seconds (JVM running for 14.004)
+2023-07-13 03:33:53.337  INFO [msd-pizza-producer,,,] 8724 --- [http-nio-7092-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2023-07-13 03:33:53.337  INFO [msd-pizza-producer,,,] 8724 --- [http-nio-7092-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2023-07-13 03:33:53.389  INFO [msd-pizza-producer,,,] 8724 --- [http-nio-7092-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 52 ms
+2023-07-13 03:33:53.498 DEBUG [msd-pizza-producer,c7b06a1996f6f9cf,513762ab7ae35464,true] 8724 --- [http-nio-7092-exec-1] c.a.lkm.controller.PizzaController       : Entry to getallDetailsByPizaaName Controller
+2023-07-13 03:33:53.518  INFO [msd-pizza-producer,c7b06a1996f6f9cf,513762ab7ae35464,true] 8724 --- [http-nio-7092-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2023-07-13 03:33:53.700 DEBUG [msd-pizza-producer,c7b06a1996f6f9cf,513762ab7ae35464,true] 8724 --- [http-nio-7092-exec-1] c.a.lkm.controller.PizzaController       : Exit from getallDetailsByPizaaName Controller
+2023-07-13 03:33:55.689  WARN [msd-pizza-producer,,,] 8724 --- [AsyncReporter(org.springframework.cloud.sleuth.zipkin.RestTemplateSender@79e3f444)] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 1 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v1/spans": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect)
+
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v1/spans": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:666) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:628) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:590) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin.RestTemplateSender.post(RestTemplateSender.java:73) ~[spring-cloud-sleuth-zipkin-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin.RestTemplateSender.sendSpans(RestTemplateSender.java:46) ~[spring-cloud-sleuth-zipkin-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at zipkin.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:245) [zipkin-reporter-1.0.0.jar:na]
+	at zipkin.reporter.AsyncReporter$Builder.lambda$build$0(AsyncReporter.java:166) [zipkin-reporter-1.0.0.jar:na]
+	at zipkin.reporter.AsyncReporter$Builder$$Lambda$1.run(Unknown Source) [zipkin-reporter-1.0.0.jar:na]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_332]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_332]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79) ~[na:1.8.0_332]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_332]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_332]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_332]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_332]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_332]
+	at java.net.Socket.connect(Socket.java:607) ~[na:1.8.0_332]
+	at java.net.Socket.connect(Socket.java:556) ~[na:1.8.0_332]
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339) ~[na:1.8.0_332]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1228) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056) ~[na:1.8.0_332]
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990) ~[na:1.8.0_332]
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:78) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:652) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	... 8 common frames omitted
+
+2023-07-13 03:34:08.998  INFO [msd-pizza-producer,,,] 8724 --- [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-07-13 03:34:08.999  INFO [msd-pizza-producer,,,] 8724 --- [RMI TCP Connection(10)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4983159f: startup date [Thu Jul 13 03:32:39 IST 2023]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@55fe41ea
+2023-07-13 03:34:09.000  INFO [msd-pizza-producer,,,] 8724 --- [RMI TCP Connection(10)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application msd-pizza-producer with eureka with status DOWN
+2023-07-13 03:34:09.000  WARN [msd-pizza-producer,,,] 8724 --- [RMI TCP Connection(10)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1689199449000, current=DOWN, previous=UP]
+2023-07-13 03:34:09.000  INFO [msd-pizza-producer,,,] 8724 --- [RMI TCP Connection(10)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2023-07-13 03:34:09.000  INFO [msd-pizza-producer,,,] 8724 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSD-PIZZA-PRODUCER/172.32.9.54:msd-pizza-producer:7092: registering service...
+2023-07-13 03:34:09.000  INFO [msd-pizza-producer,,,] 8724 --- [RMI TCP Connection(10)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2023-07-13 03:34:09.004  INFO [msd-pizza-producer,,,] 8724 --- [RMI TCP Connection(10)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSD-PIZZA-PRODUCER/172.32.9.54:msd-pizza-producer:7092 - deregister  status: 200
+2023-07-13 03:34:09.004  INFO [msd-pizza-producer,,,] 8724 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSD-PIZZA-PRODUCER/172.32.9.54:msd-pizza-producer:7092 - registration status: 204
+2023-07-13 03:34:09.012  INFO [msd-pizza-producer,,,] 8724 --- [RMI TCP Connection(10)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2023-07-13 03:34:09.013  INFO [msd-pizza-producer,,,] 8724 --- [RMI TCP Connection(10)-127.0.0.1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2023-07-13 03:34:10.017  WARN [msd-pizza-producer,,,] 8724 --- [RMI TCP Connection(10)-127.0.0.1] z.r.AsyncReporter$BoundedAsyncReporter   : Timed out waiting for in-flight spans to send
+2023-07-13 03:34:10.017  INFO [msd-pizza-producer,,,] 8724 --- [RMI TCP Connection(10)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2023-07-13 03:34:10.017  INFO [msd-pizza-producer,,,] 8724 --- [RMI TCP Connection(10)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2023-07-13 03:34:10.019  INFO [msd-pizza-producer,,,] 8724 --- [RMI TCP Connection(10)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-13 03:34:10.108  INFO [msd-pizza-producer,,,] 8724 --- [RMI TCP Connection(10)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service Tomcat
+2023-07-13 03:34:10.110  INFO [msd-pizza-producer,,,] 8724 --- [localhost-startStop-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-07-13 04:28:30.972  INFO [msd-pizza-producer,,,] 5556 --- [main] com.accenture.lkm.PizzaOrderProducer     : No active profile set, falling back to default profiles: default
+2023-07-13 04:28:30.987  INFO [msd-pizza-producer,,,] 5556 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4983159f: startup date [Thu Jul 13 04:28:30 IST 2023]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@55fe41ea
+2023-07-13 04:28:31.944  INFO [msd-pizza-producer,,,] 5556 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=aae55333-29bf-352e-909e-45fe0844fe55
+2023-07-13 04:28:31.972  INFO [msd-pizza-producer,,,] 5556 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2023-07-13 04:28:32.079  INFO [msd-pizza-producer,,,] 5556 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.sleuth.instrument.async.AsyncDefaultAutoConfiguration$DefaultAsyncConfigurerSupport' of type [org.springframework.cloud.sleuth.instrument.async.AsyncDefaultAutoConfiguration$DefaultAsyncConfigurerSupport$$EnhancerBySpringCGLIB$$d6ed1c00] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-07-13 04:28:32.167  INFO [msd-pizza-producer,,,] 5556 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.sleuth.annotation.SleuthAnnotationAutoConfiguration' of type [org.springframework.cloud.sleuth.annotation.SleuthAnnotationAutoConfiguration$$EnhancerBySpringCGLIB$$9c10c46f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-07-13 04:28:32.410  INFO [msd-pizza-producer,,,] 5556 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sleuthAdvisorConfig' of type [org.springframework.cloud.sleuth.annotation.SleuthAdvisorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-07-13 04:28:32.418  INFO [msd-pizza-producer,,,] 5556 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$99ab7e3d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-07-13 04:28:32.496  INFO [msd-pizza-producer,,,] 5556 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$b5c5813a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-07-13 04:28:32.524  INFO [msd-pizza-producer,,,] 5556 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.sleuth.instrument.async.AsyncDefaultAutoConfiguration' of type [org.springframework.cloud.sleuth.instrument.async.AsyncDefaultAutoConfiguration$$EnhancerBySpringCGLIB$$818f2a5c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-07-13 04:28:32.559  INFO [msd-pizza-producer,,,] 5556 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.sleuth.instrument.web.client.TraceWebClientAutoConfiguration$TraceOAuthConfiguration' of type [org.springframework.cloud.sleuth.instrument.web.client.TraceWebClientAutoConfiguration$TraceOAuthConfiguration$$EnhancerBySpringCGLIB$$dea8109c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-07-13 04:28:33.087  INFO [msd-pizza-producer,,,] 5556 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 7092 (http)
+2023-07-13 04:28:33.098  INFO [msd-pizza-producer,,,] 5556 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2023-07-13 04:28:33.099  INFO [msd-pizza-producer,,,] 5556 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.11
+2023-07-13 04:28:33.226  INFO [msd-pizza-producer,,,] 5556 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-07-13 04:28:33.227  INFO [msd-pizza-producer,,,] 5556 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2240 ms
+2023-07-13 04:28:33.745  INFO [msd-pizza-producer,,,] 5556 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2023-07-13 04:28:33.746  INFO [msd-pizza-producer,,,] 5556 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'traceFilter' to: [/*]
+2023-07-13 04:28:33.746  INFO [msd-pizza-producer,,,] 5556 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2023-07-13 04:28:33.746  INFO [msd-pizza-producer,,,] 5556 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2023-07-13 04:28:33.746  INFO [msd-pizza-producer,,,] 5556 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2023-07-13 04:28:33.746  INFO [msd-pizza-producer,,,] 5556 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2023-07-13 04:28:34.988  INFO [msd-pizza-producer,,,] 5556 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2023-07-13 04:28:35.008  INFO [msd-pizza-producer,,,] 5556 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2023-07-13 04:28:35.103  INFO [msd-pizza-producer,,,] 5556 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2023-07-13 04:28:35.105  INFO [msd-pizza-producer,,,] 5556 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2023-07-13 04:28:35.107  INFO [msd-pizza-producer,,,] 5556 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2023-07-13 04:28:35.165  INFO [msd-pizza-producer,,,] 5556 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2023-07-13 04:28:35.331  INFO [msd-pizza-producer,,,] 5556 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-07-13 04:28:35.929  INFO [msd-pizza-producer,,,] 5556 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-13 04:28:37.588  WARN [msd-pizza-producer,,,] 5556 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-07-13 04:28:37.589  INFO [msd-pizza-producer,,,] 5556 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-07-13 04:28:37.596  WARN [msd-pizza-producer,,,] 5556 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-07-13 04:28:37.596  INFO [msd-pizza-producer,,,] 5556 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-07-13 04:28:38.266  INFO [msd-pizza-producer,,,] 5556 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4983159f: startup date [Thu Jul 13 04:28:30 IST 2023]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@55fe41ea
+2023-07-13 04:28:38.481  INFO [msd-pizza-producer,,,] 5556 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/v1/msd/pizzaorder/pizzaName],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.accenture.lkm.dto.PizzaOrderDto>> com.accenture.lkm.controller.PizzaController.getallDetailsByPizaaName(com.accenture.lkm.dto.PizzaNameDto)
+2023-07-13 04:28:38.482  INFO [msd-pizza-producer,,,] 5556 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/v1/msd/pizzaorder/customerContactNumber],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.accenture.lkm.dto.PizzaOrderDto>> com.accenture.lkm.controller.PizzaController.getOrderDetailsByContactNumber(com.accenture.lkm.dto.PizzaCustomerContactNumberDto)
+2023-07-13 04:28:38.482  INFO [msd-pizza-producer,,,] 5556 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/v1/msd/pizzaorder],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.accenture.lkm.dto.PizzaOrderDto>> com.accenture.lkm.controller.PizzaController.getPizzaDetails()
+2023-07-13 04:28:38.483  INFO [msd-pizza-producer,,,] 5556 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/v1/msd/pizzaorder],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.accenture.lkm.controller.PizzaController.addPizza(com.accenture.lkm.dto.PizzaOrderDto)
+2023-07-13 04:28:38.485  INFO [msd-pizza-producer,,,] 5556 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2023-07-13 04:28:38.485  INFO [msd-pizza-producer,,,] 5556 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2023-07-13 04:28:38.656  INFO [msd-pizza-producer,,,] 5556 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2023-07-13 04:28:38.657  INFO [msd-pizza-producer,,,] 5556 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2023-07-13 04:28:38.760  INFO [msd-pizza-producer,,,] 5556 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2023-07-13 04:28:40.598  INFO [msd-pizza-producer,,,] 5556 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 
+2023-07-13 04:28:40.767  INFO [msd-pizza-producer,,,] 5556 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2023-07-13 04:28:40.776  INFO [msd-pizza-producer,,,] 5556 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2023-07-13 04:28:40.778  INFO [msd-pizza-producer,,,] 5556 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2023-07-13 04:28:40.780  INFO [msd-pizza-producer,,,] 5556 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2023-07-13 04:28:40.782  INFO [msd-pizza-producer,,,] 5556 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2023-07-13 04:28:40.795  INFO [msd-pizza-producer,,,] 5556 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2023-07-13 04:28:40.806  INFO [msd-pizza-producer,,,] 5556 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=4983159f,type=ConfigurationPropertiesRebinder]
+2023-07-13 04:28:41.038  INFO [msd-pizza-producer,,,] 5556 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2023-07-13 04:28:41.047  INFO [msd-pizza-producer,,,] 5556 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-07-13 04:28:41.111  INFO [msd-pizza-producer,,,] 5556 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-07-13 04:28:41.236  INFO [msd-pizza-producer,,,] 5556 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2023-07-13 04:28:41.237  INFO [msd-pizza-producer,,,] 5556 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2023-07-13 04:28:41.368  INFO [msd-pizza-producer,,,] 5556 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2023-07-13 04:28:41.368  INFO [msd-pizza-producer,,,] 5556 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2023-07-13 04:28:41.829  INFO [msd-pizza-producer,,,] 5556 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-07-13 04:28:41.889  INFO [msd-pizza-producer,,,] 5556 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-07-13 04:28:41.890  INFO [msd-pizza-producer,,,] 5556 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-07-13 04:28:41.890  INFO [msd-pizza-producer,,,] 5556 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-07-13 04:28:41.890  INFO [msd-pizza-producer,,,] 5556 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-07-13 04:28:41.890  INFO [msd-pizza-producer,,,] 5556 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-07-13 04:28:41.890  INFO [msd-pizza-producer,,,] 5556 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-07-13 04:28:41.890  INFO [msd-pizza-producer,,,] 5556 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-07-13 04:28:42.086  INFO [msd-pizza-producer,,,] 5556 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-07-13 04:28:42.087  INFO [msd-pizza-producer,,,] 5556 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-07-13 04:28:42.089  INFO [msd-pizza-producer,,,] 5556 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-07-13 04:28:42.092  INFO [msd-pizza-producer,,,] 5556 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1689202722092 with initial instances count: 2
+2023-07-13 04:28:42.223  INFO [msd-pizza-producer,,,] 5556 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application msd-pizza-producer with eureka with status UP
+2023-07-13 04:28:42.224  INFO [msd-pizza-producer,,,] 5556 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1689202722224, current=UP, previous=STARTING]
+2023-07-13 04:28:42.226  INFO [msd-pizza-producer,,,] 5556 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSD-PIZZA-PRODUCER/172.32.9.54:msd-pizza-producer:7092: registering service...
+2023-07-13 04:28:42.257  INFO [msd-pizza-producer,,,] 5556 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSD-PIZZA-PRODUCER/172.32.9.54:msd-pizza-producer:7092 - registration status: 204
+2023-07-13 04:28:42.284  INFO [msd-pizza-producer,,,] 5556 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 7092 (http)
+2023-07-13 04:28:42.285  INFO [msd-pizza-producer,,,] 5556 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 7092
+2023-07-13 04:28:42.289  INFO [msd-pizza-producer,,,] 5556 --- [main] com.accenture.lkm.PizzaOrderProducer     : Started PizzaOrderProducer in 12.472 seconds (JVM running for 13.209)

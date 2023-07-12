@@ -23,16 +23,19 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"pizzaName\":\"Test-1\",\r\n    \"bill\" :11.2,\r\n    \"quantity\": 1,\r\n    \"customerContactNumber\":\"111-222-333\"\r\n}"
+					"raw": "{\r\n    \"pizzaName\":\"test-3\",\r\n    \"bill\" :11.2,\r\n    \"quantity\": 1,\r\n    \"customerContactNumber\":\"111-222-333\"\r\n}"
 				},
 				"url": {
-					"raw": "http://localhost:7094/pizzaorder",
+					"raw": "http://localhost:7092/api/v1/msd/pizzaorder",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "7094",
+					"port": "7092",
 					"path": [
+						"api",
+						"v1",
+						"msd",
 						"pizzaorder"
 					]
 				}
@@ -45,13 +48,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:7094/pizzaorder",
+					"raw": "http://localhost:7092/api/v1/msd/pizzaorder",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "7094",
+					"port": "7092",
 					"path": [
+						"api",
+						"v1",
+						"msd",
 						"pizzaorder"
 					]
 				}
@@ -73,13 +79,16 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:7094/pizzaorder/pizzaName",
+					"raw": "http://localhost:7092/api/v1/msd/pizzaorder/pizzaName",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "7094",
+					"port": "7092",
 					"path": [
+						"api",
+						"v1",
+						"msd",
 						"pizzaorder",
 						"pizzaName"
 					]
@@ -94,7 +103,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"customerContactNumber\":\"111-333-222\"\r\n}",
+					"raw": "{\r\n    \"customerContactNumber\":\"111-222-333\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -102,13 +111,16 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:7094/pizzaorder/customerContactNumber",
+					"raw": "http://localhost:7092/api/v1/msd/pizzaorder/customerContactNumber",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "7094",
+					"port": "7092",
 					"path": [
+						"api",
+						"v1",
+						"msd",
 						"pizzaorder",
 						"customerContactNumber"
 					]
@@ -122,13 +134,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:7095/pizzaorder",
+					"raw": "http://localhost:7093/api/v1/msd/pizzaorder",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "7095",
+					"port": "7093",
 					"path": [
+						"api",
+						"v1",
+						"msd",
 						"pizzaorder"
 					]
 				}
@@ -156,13 +171,16 @@
 					"raw": "{\r\n    \"pizzaName\":\"Test-2\",\r\n    \"bill\" :11.3,\r\n    \"quantity\": 1,\r\n    \"customerContactNumber\":\"111-222-333\"\r\n}"
 				},
 				"url": {
-					"raw": "http://localhost:7095/pizzaorder",
+					"raw": "http://localhost:7093/api/v1/msd/pizzaorder",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "7095",
+					"port": "7093",
 					"path": [
+						"api",
+						"v1",
+						"msd",
 						"pizzaorder"
 					]
 				}
@@ -184,13 +202,16 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:7095/pizzaorder/pizzaName",
+					"raw": "http://localhost:7093/api/v1/msd/pizzaorder/pizzaName",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "7095",
+					"port": "7093",
 					"path": [
+						"api",
+						"v1",
+						"msd",
 						"pizzaorder",
 						"pizzaName"
 					]
@@ -213,13 +234,16 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:7095/pizzaorder/customerContactNumber",
+					"raw": "http://localhost:7093/api/v1/msd/pizzaorder/customerContactNumber",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "7095",
+					"port": "7093",
 					"path": [
+						"api",
+						"v1",
+						"msd",
 						"pizzaorder",
 						"customerContactNumber"
 					]
@@ -233,13 +257,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:7095/pizzaorder/getMessage",
+					"raw": "http://localhost:7093/api/v1/msd/pizzaorder/getMessage",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "7095",
+					"port": "7093",
 					"path": [
+						"api",
+						"v1",
+						"msd",
 						"pizzaorder",
 						"getMessage"
 					]
