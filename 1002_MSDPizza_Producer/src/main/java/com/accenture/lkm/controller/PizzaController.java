@@ -36,10 +36,10 @@ public class PizzaController {
 	 */
 	@PostMapping
 	public ResponseEntity<String> addPizza(@Valid @RequestBody PizzaOrderDto pizzaOrderDTO) {
-		logger.info("Entry to addPizza Controller");
+		logger.debug("Entry to addPizza Controller");
 		int id = pizzaService.addPizza(pizzaOrderDTO);
 		String responseStr = "Pizza Order Placed Successfully: " + id;
-		logger.info("Exit from addPizza Controller with id: " + id);
+		logger.debug("Exit from addPizza Controller with id: " + id);
 		return new ResponseEntity<String>(responseStr, HttpStatus.CREATED);
 	}
 
@@ -51,10 +51,10 @@ public class PizzaController {
 	 */
 	@PostMapping(value = "/pizzaName")
 	public ResponseEntity<List<PizzaOrderDto>> getallDetailsByPizaaName(@Valid @RequestBody PizzaNameDto pizzaNameDto) {
-		logger.info("Entry to getallDetailsByPizaaName Controller");
+		logger.debug("Entry to getallDetailsByPizaaName Controller");
 		if (pizzaNameDto != null && !pizzaNameDto.getPizzaName().isEmpty()) {
 			List<PizzaOrderDto> pizzaDetailList = pizzaService.getallDetailsByPizaaName(pizzaNameDto.getPizzaName());
-			logger.info("Exit from getallDetailsByPizaaName Controller");
+			logger.debug("Exit from getallDetailsByPizaaName Controller");
 			if (!pizzaDetailList.isEmpty()) {
 				return new ResponseEntity<List<PizzaOrderDto>>(pizzaDetailList, HttpStatus.OK);
 			} else {
@@ -72,7 +72,9 @@ public class PizzaController {
 	 */
 	@GetMapping
 	public ResponseEntity<List<PizzaOrderDto>> getPizzaDetails() {
+		logger.debug("Entry to getPizzaDetails Controller for find all orders");
 		List<PizzaOrderDto> pizzaDetailList = pizzaService.getallDetails();
+		logger.debug("Exit from getPizzaDetails Controller for find all orders");
 		if (!pizzaDetailList.isEmpty()) {
 			return new ResponseEntity<List<PizzaOrderDto>>(pizzaDetailList, HttpStatus.OK);
 		} else {
@@ -90,9 +92,11 @@ public class PizzaController {
 	@PostMapping(value = "/customerContactNumber")
 	public ResponseEntity<List<PizzaOrderDto>> getOrderDetailsByContactNumber(
 			@Valid @RequestBody PizzaCustomerContactNumberDto pizzaCustContactNumberDto) {
+		logger.debug("Entry to getOrderDetailsByContactNumber Controller");
 		if (pizzaCustContactNumberDto != null && !pizzaCustContactNumberDto.getCustomerContactNumber().isEmpty()) {
 			List<PizzaOrderDto> pizzaDetailList = pizzaService
 					.getOrderDetailsByContactNumber(pizzaCustContactNumberDto.getCustomerContactNumber());
+			logger.debug("Exit from getOrderDetailsByContactNumber Controller");
 			if (!pizzaDetailList.isEmpty()) {
 				return new ResponseEntity<List<PizzaOrderDto>>(pizzaDetailList, HttpStatus.OK);
 			} else {
